@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte moderna */
+    background-color: #f4f7fa; /* Cor de fundo mais suave */
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    width: 400px;
+    height: 600px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.message {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    max-width: 70%;
+    padding: 12px 15px; /* Aumentar o espaço interno */
+    border-radius: 20px; /* Cantos mais arredondados */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.bot-message {
+    background-color: #e5e5e5; /* Cor do balão do robô */
+    color: #333;
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Alinha à esquerda */
+}
+
+.user-message {
+    background-color: #007bff; /* Cor do balão do cliente */
+    color: white;
+    align-self: flex-end; /* Alinha à direita */
+    margin-left: auto; /* Faz com que o balão fique à direita */
+}
+
+.typing-indicator {
+    display: flex; /* Usar flexbox para alinhar os pontos */
+    align-items: flex-end; /* Alinhar os pontos na parte inferior */
+}
+
+.typing-indicator div {
+    width: 10px; /* Largura dos pontos */
+    height: 10px; /* Altura dos pontos */
+    border-radius: 50%; /* Tornar os pontos circulares */
+    background-color: #007bff; /* Cor dos pontos */
+    margin: 0 2px; /* Espaçamento entre os pontos */
+    animation: bounce 1.5s infinite; /* Aumentar a duração da animação */
+}
+
+.typing-indicator div:nth-child(1) {
+    animation-delay: 0s; /* Primeiro ponto */
+}
+
+.typing-indicator div:nth-child(2) {
+    animation-delay: 0.3s; /* Aumentar o atraso do segundo ponto */
+}
+
+.typing-indicator div:nth-child(3) {
+    animation-delay: 0.6s; /* Aumentar o atraso do terceiro ponto */
+}
+
+@keyframes bounce {
+    0%, 20%, 100% {
+        transform: translateY(0); /* Ponto na posição inicial */
+    }
+    30% {
+        transform: translateY(-10px); /* Ponto sobe */
+    }
+    50% {
+        transform: translateY(0); /* Ponto volta para a posição inicial */
+    }
+    70% {
+        transform: translateY(-5px); /* Ponto desce um pouco */
+    }
+}
+
+.options {
+    padding: 10px;
+    text-align: right; /* Alinha as opções à direita */
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    display: inline-block;
+    transition: background-color 0.3s; /* Transição suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efeito de sombra */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Efeito hover mais sutil */
+}
